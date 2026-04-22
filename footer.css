@@ -1,0 +1,204 @@
+/* FOOTER CSS - PREMIUM LIGHT LUXURY */
+
+:root {
+    --bg-offwhite: #fff9f9;
+    --primary-gold: #c8a86b;
+    --text-dark: #2c2c2c;
+    --text-muted: #6b6b6b;
+    --border-light: #e8e4e0;
+    --font-sans: 'Manrope', system-ui, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+.site-footer {
+    background: var(--bg-offwhite);
+    padding: 80px 5% 30px;
+    border-top: 1px solid var(--border-light);
+}
+
+/* GRID */
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+/* LOGO */
+.footer-logo {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/* TEXT */
+.footer-col p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* HEADINGS */
+.footer-col h4 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* GOLD LINE */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-gold);
+}
+
+/* LINKS */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+/* 🔥 HOVER EFFECT */
+.footer-col ul li a:hover {
+    color: var(--primary-gold);
+    padding-left: 6px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #555;
+    font-size: 16px;
+
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+/* 🔥 ICON FIX (IMPORTANT) */
+.social-icons a i {
+    font-size: 16px;
+}
+
+/* 🔥 PREMIUM HOVER */
+.social-icons a:hover {
+    background: linear-gradient(135deg, #c8a86b, #e5c07b);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(200,168,107,0.3);
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter-form {
+    display: flex;
+    border-bottom: 1px solid var(--primary-gold);
+    margin-top: 15px;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    padding: 12px 0;
+    color: var(--text-dark);
+    flex: 1;
+    outline: none;
+    font-family: var(--font-sans);
+}
+
+.newsletter-form input::placeholder {
+    color: var(--text-muted);
+}
+
+/* BUTTON */
+.newsletter-form button {
+    background: none;
+    border: none;
+    color: var(--primary-gold);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+/* 🔥 HOVER */
+.newsletter-form button:hover {
+    transform: translateX(6px);
+}
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-bottom a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: var(--primary-gold);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .footer-widgets {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .newsletter-form {
+        max-width: 300px;
+        margin: 15px auto 0;
+    }
+}
