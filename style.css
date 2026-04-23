@@ -37,9 +37,14 @@ body {
     margin: 0 auto;
     padding: 0 5%;
 }
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}
 
 section {
-    padding: 100px 0;
+    padding: 78px 0;
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -212,6 +217,25 @@ section {
     z-index: 2;
     max-width: 320px;
 }
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding: 120px 20px 60px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-desc {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
 
 .video-card-light {
     background: rgba(255,255,255,0.95);
@@ -220,11 +244,11 @@ section {
     box-shadow: var(--shadow-sm);
 }
 
-.video-icon i {
+/* .video-icon i {
     font-size: 48px;
     color: var(--primary-gold);
     margin-bottom: 15px;
-}
+} */
 
 /* About Section */
 .about-grid {
@@ -244,6 +268,17 @@ section {
 .about-text p {
     color: var(--text-muted);
     margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+        text-align: center;
+    }
 }
 
 .gallery-grid {
@@ -322,6 +357,7 @@ section {
     cursor: pointer;
     transition: var(--transition);
     font-size: 1rem;
+    margin-right: 50px;
 }
 
 .tab-btn.active {
@@ -541,28 +577,45 @@ section {
 }
 
 .store-subtitle {
-    color: #777;
-    margin-bottom: 10px;
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 15px;
+}
+.store-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #c8a86b;
+    margin-bottom: 5px;
 }
 
 /* ================= LAYOUT FIX ================= */
 
+.store {
+    background: #f9f7f4;
+    padding: 80px 0;
+}
 
 .store .row {
     display: flex;
     align-items: center;
+    gap: 40px;
 }
 /* ================= TEXT ================= */
 
 .store-text {
     animation: fadeUp 1s ease;
     padding-right: 40px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
 .store-text h2 {
-    font-size: 50px;
+    font-size: 42px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .store-text h4 {
@@ -578,8 +631,8 @@ section {
 }
 
 .store-text p {
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.8;
     color: #555;
     margin-bottom: 10px;
 }
@@ -593,29 +646,34 @@ section {
 .store-btn {
     display: inline-block;
     margin-top: 25px;
-    background: #c8a86b;
+   background: linear-gradient(135deg, #c8a86b, #b8935a);
     color: #fff;
-    padding: 10px 22px;
+    padding: 12px 26px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     transition: 0.3s;
 }
 
 .store-btn:hover {
     background: #b8935a;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
 
 /* ================= SWIPER ================= */
 
 .storeSwiper {
     width: 100%;
-    max-width: 650px;
-     margin-left: 150px;
+    max-width: 600px;
+     margin-left: auto ;
+     margin-right: auto;
    display: flex;
     justify-content: center;
     align-items: center;
-      padding: 20px 0;
+      padding:  0;
 
 }
 
@@ -630,13 +688,17 @@ section {
     transform: scale(1.05);
 }
 
+.storeSwiper .swiper-slide-active img {
+    transform: scale(1.03);
+}
 
 .storeSwiper img {
  width: 100%;
-    height: 350px;   /* sab same height */
+    height: 380px;   /* sab same height */
     object-fit: cover; /* crop karke equal banata hai */
-   border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+   border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    transition: 0.5s;
 }
 
 /* ================= IMAGE OVERLAY ================= */
@@ -673,9 +735,17 @@ section {
 /* arrows */
 .swiper-button-next,
 .swiper-button-prev {
+    background: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     color: #c8a86b;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
-
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 16px;
+}
 /* dots */
 .swiper-pagination-bullet {
     background: #c8a86b;
@@ -706,11 +776,31 @@ section {
         flex-direction: column;
     }
 
-    .store-text {
-        text-align: center;
-         padding-right: 0;
-        margin-bottom: 20px;
+    .store-text h2 {
+        font-size: 24px;
     }
+    .store-text p {
+        font-size: 14px;
+    }
+    .storeSwiper {
+        margin-left: 0;
+    }
+    .store-text {
+       
+        text-align: center;
+         padding:0px;
+    }
+    .store-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #c8a86b;
+    color: #fff;
+    padding: 10px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 24px;
+}
 
     .storeSwiper img {
         width: 100%;
@@ -835,3 +925,252 @@ section {
     .pricing-card-light.featured-light { transform: none; }
 }
 
+/* FLEX LAYOUT */
+.tab-flex {
+    display: flex;
+    gap: 40px;
+     align-items: stretch;
+    justify-content: space-between;
+}
+
+/* LEFT IMAGE SECTION */
+.flex-shirt {
+    width: 50%;
+    position: relative;
+    display: flex;
+    height: 500px;
+}
+
+/* SWIPER SIZE CONTROL */
+.flex-shirt .swiper {
+    width: 100%;
+}
+
+/* IMAGE FIX */
+.flex-shirt img {
+    width: 100%;
+    height: 100%;
+     object-fit: cover;
+    object-position: top; /* 🔥 FIX */
+    border-radius: 16px;
+}
+.flex-shirt::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    border-radius: 16px;
+}
+/* RIGHT TEXT SECTION */
+.flex-text {
+    width: 50%;
+    padding: 40px;
+    background: #f9eaea;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* TEXT HEADING */
+.flex-text h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+}
+@media (max-width: 768px) {
+    .tab-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .flex-shirt {
+        width: 100%;
+        height: 220px;
+    }
+
+    .flex-text {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .flex-text h2 {
+        font-size: 22px;
+    }
+
+    .product-details li {
+        font-size: 14px;
+    }
+}
+
+/* LIST */
+.product-details {
+    list-style: none;
+    padding: 0;
+}
+
+.product-details li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.product-details li strong {
+   color: #c8a86b;
+}
+
+/* SPACING IMPROVEMENT */
+.flex-text p {
+    line-height: 1.6;
+}
+
+
+/* container */
+.atelier-locations {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* box */
+.atelier-box {
+    position: relative;
+    border: 2px solid #000;
+    padding: 18px 15px 12px;
+    text-align: center;
+    background: #f7f3ed;
+}
+
+/* orange tag */
+.atelier-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f26522;
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    letter-spacing: 1px;
+}
+
+/* mall name */
+.atelier-box h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+.atelier-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #c8a86b;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+.atelierSwiper1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.atelier-btn:hover {
+    background: #b8935a;
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .tab-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .flex-shirt,
+    .flex-text {
+        width: 100%;
+        text-align: center;
+          margin: 0;
+    padding: 0;
+    min-height: auto !important;
+    height: auto !important;
+    }
+
+    /* Swiper fix */
+.atelierSwiper1 {
+    height: auto !important;
+}
+
+.atelierSwiper1 .swiper-wrapper {
+    height: auto !important;
+}
+
+.atelierSwiper1 .swiper-slide {
+    height: auto !important;
+}
+.flex-text:empty {
+    display: none;
+}
+/* Image fix */
+.flex-shirt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* 🔥 gap remove */
+}
+    .swiper-slide {
+    height: auto !important;
+}
+}
+@media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .store-btn,
+    .atelier-btn {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+}
+
+/* GLOBAL FIX */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+/* @media (max-width: 1024px) {
+
+    .store .row {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .store-text,
+    .storeSwiper {
+        width: 100%;
+    }
+    
+
+    .storeSwiper {
+        margin-left: 0;
+    }
+} */

@@ -147,4 +147,21 @@ var swiper = new Swiper(".storeSwiper", {
 });
 
 
+// cetagory
 
+document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        // remove active
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".tab-pane").forEach(p => p.classList.remove("active"));
+
+        // add active
+        this.classList.add("active");
+        document.getElementById(this.dataset.tab).classList.add("active");
+    });
+});
+
+
+new Swiper(".atelierSwiper1", { loop:true, autoplay:{delay:2500} });
+new Swiper(".atelierSwiper2", { loop:true, autoplay:{delay:2500} });
