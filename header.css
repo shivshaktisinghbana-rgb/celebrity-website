@@ -28,12 +28,42 @@
     align-items: center;
     flex-wrap: wrap;
 }
+.custom-logo-text {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1;
+}
+.brand-main::first-letter {
+    letter-spacing: 0;
+}
 
-.logo-img {
+/* MAIN TEXT */
+.brand-main {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #000;
+    text-transform: capitalize;
+}
+.brand-i {
+    color: #ff6a00;
+}
+/* SUB TEXT */
+.brand-sub {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #c8a86b;
+    text-transform: lowercase;
+    margin-top: 2px;
+}
+
+/* .logo-img {
     height: 50px;
     width: auto;
     object-fit: contain;
-}
+} */
 
 .nav-menu {
     display: flex;
